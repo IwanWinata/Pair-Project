@@ -7,6 +7,7 @@ const qrcode = require("qrcode")
 class Controller {
 
     static home(req, res){
+        let error = req.query.error
         let category;
         const userId = req.session.UserId
         const role = req.session.role
@@ -27,7 +28,7 @@ class Controller {
             return Product.findAll(option)
         })
         .then(data => {
-            res.render("home", {data, category, currency ,userId ,role})
+            res.render("home", {data, category, currency ,userId ,role, error})
         })
         .catch(err => {
             console.log(err);
@@ -36,7 +37,8 @@ class Controller {
     } 
 
     static getlogin(req, res){
-        res.render("modallogin")
+        let error = req.query.error
+        res.render("modallogin", {error})
     }
 
     static postlogin(req,res){
