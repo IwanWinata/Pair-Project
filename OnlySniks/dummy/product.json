@@ -1,0 +1,37 @@
+[
+    {
+        "name": "Air Jordan",
+        "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus, cum?",
+        "price": 600000,
+        "image": "https://s4.bukalapak.com/img/42391268692/large/data.jpeg.webp",
+        "CategoryId":1 
+    },
+    {
+        "name": "Air Jordan Black",
+        "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus, cum?",
+        "price": 800000,
+        "image":"https://images.tokopedia.net/img/cache/500-square/VqbcmM/2022/1/25/9328c3ec-5c9d-4008-80f9-8014a25c9a91.jpg",
+        "CategoryId": 2
+    },
+    {
+        "name": "Air Jordan Grey",
+        "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus, cum?",
+        "price": 900000,
+        "image": "https://images.tokopedia.net/img/cache/500-square/product-1/2020/6/17/14044091/14044091_0570484f-4f83-4264-bf1a-c2ddd346bdd0_1000_1000",
+        "CategoryId": 1
+    },
+    {
+        "name": "Air Jordan Black Pink",
+        "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus, cum?",
+        "price": 1200000,
+        "image":"https://my-live-01.slatic.net/p/dbd36764f97991425ef252c37e227ecf.jpg",
+        "CategoryId": 3
+    },
+    {
+        "name": "Air Jordan DJSODA",
+        "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus, cum?",
+        "price": 2500000,
+        "image": "https://image.hkmarket1314.com/jkforum1617024354.jpeg",
+        "CategoryId": 3
+    }
+  ]
