@@ -36,36 +36,16 @@
                             </ul>
                         </li>
                     </ul>
-                    <% if (!userId) { %>
-                        <form class="d-flex m-2">
-                            <button class="btn btn-outline-dark" type="button" data-toggle="modal" data-target="#loginModal">
-                                Login
-                            </button>
-                        </form>
-                        <% } else { %>
-                            <form class="d-flex m-2">
-                                <button class="btn btn-outline-dark" type="button" onclick="window.location.href='/logout'">
-                                    Logout
-                                </button>
-                            </form>
-                    <% } %>
-                        <% if (role !== "admin") { %>
-                            <form class="d-flex m-2">
-                                <a href="#">
-                                <button class="btn btn-outline-dark" type="button">
-                                    My Order
-                                </button>
-                                </a>
-                            </form>
-                            <% } else { %>
-                                <form class="d-flex m-2">
-                                    <a href="/order/admin">
-                                    <button class="btn btn-outline-dark" type="button">
-                                        My Order
-                                    </button>
-                                    </a>
-                                </form>
-                        <% } %>
+                    <form class="d-flex m-2">
+                        <button class="btn btn-outline-dark" type="submit" data-toggle="modal" href="/logout">
+                            Logout
+                        </button>
+                    </form>
+                    <form class="d-flex">
+                        <button class="btn btn-outline-dark" type="submit" >
+                            Orders
+                        </button>
+                    </form>
                 </div>
             </div>
         </nav>

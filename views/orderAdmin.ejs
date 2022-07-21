@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> 
+    <table class="table" border="1">
+        <thead>
+            <tr>
+                <th> No </th>
+                <th> Nama Product </th>
+                <th> Status </th>
+                <th> Nama </th>
+                <th> Address </th>
+                <th> Action </th>
+            </tr>
+        </thead>
+        <tbody>
+            <% dataorder.forEach((el,i) => { %>
+                <tr>
+                    <th><%= ++i %></th>
+                    <th><%= el.Product.name %></th>
+                    <th><%= el.formatstatus() %></th>
+                    <th><%= el.User.UserProfile.firstName%> <%= el.User.UserProfile.lastName%></th>
+                    <th><%= el.User.UserProfile.address %> </th>
+                    <th><a href="">Confirmed</a></th>
+                </tr>
+                <% }) %>
+        </tbody>
+    </table>
+</body>
+</html>

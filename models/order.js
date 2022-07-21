@@ -14,12 +14,20 @@ module.exports = (sequelize, DataTypes) => {
       Order.belongsTo(models.User)
       Order.belongsTo(models.Product)
     }
+    formatstatus(){
+      if(this.status) return "On Shipment"
+      if(!this.status) return "Waiting Payment"
+
+    }
+
   }
   Order.init({
     orderNumber: DataTypes.INTEGER,
-    ammount: DataTypes.INTEGER,
+    amount: DataTypes.INTEGER,
     shippingAddress: DataTypes.STRING,
-    status: DataTypes.BOOLEAN
+    status: DataTypes.BOOLEAN,
+    UserId: DataTypes.INTEGER,
+    ProductId: DataTypes.INTEGER,
   }, {
     sequelize,
     modelName: 'Order',
