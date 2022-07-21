@@ -31,6 +31,13 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Order',
+    hooks: {
+      beforeCreate : (order, options) => {
+        order.orderNumber = Math.floor(Math.random() * 10000) + new Date(order.createdAt).toISOString().slice(0,4).replaceAll("-", "2");
+        order.amount = 1
+        order.status = false
+      }
+    }
   });
   return Order;
 };
