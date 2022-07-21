@@ -11,15 +11,71 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Product.hasMany(models.Order)
       Product.belongsTo(models.Category)
+      Product.hasMany(models.Order)
     }
   }
   Product.init({
-    name: DataTypes.STRING,
-    description: DataTypes.STRING,
-    price: DataTypes.INTEGER,
-    image: DataTypes.STRING
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: `Name cannot be empty`
+        },
+        notNull: {
+          msg: `Name is required`
+        }
+      }
+    },
+    description: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: `Description cannot be empty`
+        },
+        notNull: {
+          msg: `Description is required`
+        }
+      }
+    },
+    price: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: `Price cannot be empty`
+        },
+        notNull: {
+          msg: `Price is required`
+        }
+      }
+    },
+    image: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: `Image cannot be empty`
+        },
+        notNull: {
+          msg: `Image is required`
+        }
+      }
+    },
+    CategoryId: {
+      type: DataTypes.INTEGER,
+      // allowNull: false,
+      // validate: {
+      //   notEmpty: {
+      //     msg: `Category cannot be empty`
+      //   },
+      //   notNull: {
+      //     msg: `Category is required`
+      //   }
+      // }
+    }
   }, {
     sequelize,
     modelName: 'Product',

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="../css/styles.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">  
+</head>
+<body>
+    <% if (errors) { %>
+    <pre class="text-danger"><%=errors%></pre>
+    <% } %>
+    <form action="/product/add" method="post">
+        <!-- 2 column grid layout with text inputs for the first and last names -->
+        <div class="row mb-4">
+          <div class="col">
+            <div class="form-outline">
+                <label class="form-label m-2" for="form6Example1">Product Name</label>
+              <input name="name" type="text" id="form6Example1" class="form-control" />
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-outline">
+                <label class="form-label m-2" for="form6Example2">Price</label>
+              <input name="price" type="number" id="form6Example2" class="form-control" />
+            </div>
+          </div>
+        </div>
+      
+        <!-- Text input -->
+        <div class="form-outline mb-4">
+            <label class="form-label m-2" for="form6Example3">Image</label>
+          <input name="image" type="text" id="form6Example3" class="form-control" />
+        </div>
+        
+        <div class="form-outline mb-4">
+            <label class="form-label m-2" for="form6Example7">Description</label>
+            <textarea class="form-control" id="form6Example7" rows="4" name="description"></textarea>
+        </div>
+
+        <label class="form-label m-2" for="form6Example3">Category :</label>
+        <div class="btn-group">
+        <% data.forEach(el => { %>
+                <input type="radio" class="btn-check m-2" name="CategoryId" value="<%= el.id %>" id="option<%= el.id %>" autocomplete="off" checked />
+                <label class="btn btn-primary m-2" for="option<%= el.id %>"><%= el.name %></label>
+                <% }) %> 
+            </div> <br>
+            <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-primary btn-block mb-4 m-2">Place Product</button>
+            </div>
+      </form>
+</body>
+</html>

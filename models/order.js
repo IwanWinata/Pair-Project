@@ -14,15 +14,30 @@ module.exports = (sequelize, DataTypes) => {
       Order.belongsTo(models.User)
       Order.belongsTo(models.Product)
     }
+    formatstatus(){
+      if(this.status) return "On Shipment"
+      if(!this.status) return "Waiting Payment"
+
+    }
+
   }
   Order.init({
     orderNumber: DataTypes.INTEGER,
-    ammount: DataTypes.INTEGER,
+    amount: DataTypes.INTEGER,
     shippingAddress: DataTypes.STRING,
-    status: DataTypes.BOOLEAN
+    status: DataTypes.BOOLEAN,
+    UserId: DataTypes.INTEGER,
+    ProductId: DataTypes.INTEGER,
   }, {
     sequelize,
     modelName: 'Order',
+    hooks: {
+      beforeCreate : (order, options) => {
+        order.orderNumber = Math.floor(Math.random() * 10000) + new Date(order.createdAt).toISOString().slice(0,4).replaceAll("-", "2");
+        order.amount = 1
+        order.status = false
+      }
+    }
   });
   return Order;
 };

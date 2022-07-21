@@ -12,7 +12,7 @@ module.exports = {
     return queryInterface.addColumn('Orders', "ProductId", {
       type: sequelize.INTEGER,
       references: {
-        model: "Categories",
+        model: "Products",
         key: "id"
       }
     })
